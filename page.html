@@ -16,8 +16,8 @@
 <body class="antialiased selection:bg-emerald-200 selection:text-emerald-900 bg-slate-50 text-slate-600">
 
     <!-- 1. HEADER / NAVBAR -->
-    <header class="fixed top-0 left-0 right-0 z-50 w-full p-4 md:p-6">
-        <nav class="mx-auto max-w-7xl rounded-full backdrop-blur-xl border shadow-lg px-6 py-3 flex items-center justify-between transition-all duration-300 bg-white/80 border-white/20 shadow-slate-200/50">
+    <header class="fixed top-0 left-0 right-0 z-50 w-full p-4 md:p-6 transition-all duration-300">
+        <nav class="mx-auto max-w-7xl rounded-full backdrop-blur-xl border shadow-lg px-6 py-3 flex items-center justify-between transition-all duration-300 bg-white/80 border-white/20 shadow-slate-200/50 relative">
             <!-- Logo -->
             <a href="#" class="flex items-center gap-2 group">
                 <div class="bg-emerald-500 p-1.5 rounded-lg group-hover:bg-emerald-600 transition-colors text-white flex items-center justify-center">
@@ -36,11 +36,51 @@
                 <a href="#contact" class="text-sm font-medium transition-colors text-slate-600 hover:text-emerald-600">Contact</a>
             </div>
 
-            <!-- CTA -->
             <a href="#book" class="hidden md:inline-flex items-center gap-2 bg-emerald-500 text-sm font-medium px-5 py-2.5 rounded-full transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:bg-emerald-600 text-white">
                 Programează-te
                 <iconify-icon icon="solar:arrow-right-linear" width="20" height="20"></iconify-icon>
             </a>
+
+            <button id="mobile-menu-btn" class="md:hidden text-slate-900 flex items-center p-1 rounded-md hover:bg-slate-100 transition-colors">
+                <iconify-icon icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
+            </button>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full px-4 mt-2">
+            <div class="bg-white/90 backdrop-blur-xl border border-white/20 shadow-xl rounded-2xl p-4 flex flex-col gap-4">
+                <a href="#" class="text-base font-medium text-slate-600 hover:text-emerald-600 px-2 py-1">Acasă</a>
+                <a href="#services" class="text-base font-medium text-slate-600 hover:text-emerald-600 px-2 py-1">Servicii</a>
+                <a href="#pricing" class="text-base font-medium text-slate-600 hover:text-emerald-600 px-2 py-1">Prețuri</a>
+                <a href="#team" class="text-base font-medium text-slate-600 hover:text-emerald-600 px-2 py-1">Echipă</a>
+                <a href="#reviews" class="text-base font-medium text-slate-600 hover:text-emerald-600 px-2 py-1">Recenzii</a>
+                <a href="#contact" class="text-base font-medium text-slate-600 hover:text-emerald-600 px-2 py-1">Contact</a>
+                <hr class="border-slate-200">
+                <a href="#book" class="flex items-center justify-center gap-2 bg-emerald-500 text-white font-medium px-5 py-3 rounded-xl hover:bg-emerald-600 transition-colors">
+                    Programează-te
+                    <iconify-icon icon="solar:arrow-right-linear" width="20" height="20"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Optional: Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!btn.contains(e.target) && !menu.contains(e.target)) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+			
+
+			
 
             <!-- Mobile Menu Icon -->
             <button class="md:hidden text-slate-900 flex items-center" aria-label="Deschide meniul">
