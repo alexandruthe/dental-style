@@ -1,6 +1,7 @@
 <html lang="ro" class="scroll-smooth"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dental Style - Clinică stomatologică premium oferind servicii de implantologie, estetică dentară, ortodonție și tratamente moderne într-un mediu confortabil.">
 <title>Dental Style - Îngrijire Medicală Premium</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
@@ -42,7 +43,7 @@
             </a>
 
             <!-- Mobile Menu Icon -->
-            <button class="md:hidden text-slate-900 flex items-center">
+            <button class="md:hidden text-slate-900 flex items-center" aria-label="Deschide meniul">
                 <iconify-icon icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
             </button>
         </nav>
@@ -491,7 +492,7 @@
             <!-- Carousel Area -->
             <div class="flex items-center gap-4">
                 <!-- Prev Button -->
-                <button class="hidden md:flex w-10 h-10 rounded-full border border-slate-200 items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-400 transition-colors shrink-0">
+                <button aria-label="Recenzia anterioară" class="hidden md:flex w-10 h-10 rounded-full border border-slate-200 items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-400 transition-colors shrink-0">
                     <iconify-icon icon="solar:alt-arrow-left-linear" width="20"></iconify-icon>
                 </button>
 
@@ -569,7 +570,7 @@
                 </div>
 
                 <!-- Next Button -->
-                <button class="hidden md:flex w-10 h-10 rounded-full border border-slate-200 items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-400 transition-colors shrink-0">
+                <button aria-label="Recenzia următoare" class="hidden md:flex w-10 h-10 rounded-full border border-slate-200 items-center justify-center text-slate-400 hover:text-slate-900 hover:border-slate-400 transition-colors shrink-0">
                     <iconify-icon icon="solar:alt-arrow-right-linear" width="20"></iconify-icon>
                 </button>
             </div>
@@ -696,18 +697,19 @@
                     <form id="bookingForm" class="space-y-4" onsubmit="handleBooking(event)">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label class="sr-only">Nume</label>
-                                <input type="text" name="name" required="" placeholder="Nume Complet" class="w-full border rounded-xl px-5 py-4 placeholder-emerald-400/60 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all bg-emerald-900/50 border-emerald-800 text-white">
+                                <label class="sr-only" for="name">Nume</label>
+                                <input type="text" id="name" name="name" required="" placeholder="Nume Complet" class="w-full border rounded-xl px-5 py-4 placeholder-emerald-400/60 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all bg-emerald-900/50 border-emerald-800 text-white">
                             </div>
                             <div>
-                                <label class="sr-only">Telefon</label>
-                                <input type="tel" name="phone" required="" placeholder="Număr de Telefon" class="w-full border rounded-xl px-5 py-4 placeholder-emerald-400/60 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all bg-emerald-900/50 border-emerald-800 text-white">
+                                <label class="sr-only" for="phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone" required="" placeholder="Număr de Telefon" class="w-full border rounded-xl px-5 py-4 placeholder-emerald-400/60 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all bg-emerald-900/50 border-emerald-800 text-white">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                              <div class="relative">
-                                <select name="service" required="" class="w-full border rounded-xl px-5 py-4 placeholder-emerald-400/60 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 appearance-none cursor-pointer bg-emerald-900/50 border-emerald-800 text-white">
+                                <label class="sr-only" for="service">Serviciu</label>
+                                <select id="service" name="service" required="" class="w-full border rounded-xl px-5 py-4 placeholder-emerald-400/60 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 appearance-none cursor-pointer bg-emerald-900/50 border-emerald-800 text-white">
                                     <option value="" class="text-slate-900">Selectează Serviciul</option>
                                     <option value="control" class="text-slate-900">Control General</option>
                                     <option value="igienizare" class="text-slate-900">Igienizare</option>
@@ -718,7 +720,8 @@
                                 <iconify-icon icon="solar:alt-arrow-down-linear" class="absolute right-5 top-1/2 -translate-y-1/2 text-emerald-400 pointer-events-none" width="20"></iconify-icon>
                             </div>
                             <div class="relative">
-                                <select name="doctor" class="w-full border rounded-xl px-5 py-4 placeholder-emerald-400/60 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 appearance-none cursor-pointer bg-emerald-900/50 border-emerald-800 text-white">
+                                <label class="sr-only" for="doctor">Doctor</label>
+                                <select id="doctor" name="doctor" class="w-full border rounded-xl px-5 py-4 placeholder-emerald-400/60 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 appearance-none cursor-pointer bg-emerald-900/50 border-emerald-800 text-white">
                                     <option value="" class="text-slate-900">Oricare Medic Disponibil</option>
                                     <option value="chen" class="text-slate-900">Dr. Alex Chen</option>
                                     <option value="rodriguez" class="text-slate-900">Dr. Sofia Rodriguez</option>
@@ -728,7 +731,8 @@
                         </div>
                         
                         <div class="relative">
-                            <input type="text" name="date" onfocus="(this.type='datetime-local')" placeholder="Data și Ora Preferată" class="w-full border rounded-xl px-5 py-4 placeholder-emerald-400/60 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all [color-scheme:dark] bg-emerald-900/50 border-emerald-800 text-white">
+                            <label class="sr-only" for="date">Data</label>
+                            <input type="text" id="date" name="date" onfocus="(this.type='datetime-local')" placeholder="Data și Ora Preferată" class="w-full border rounded-xl px-5 py-4 placeholder-emerald-400/60 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-all [color-scheme:dark] bg-emerald-900/50 border-emerald-800 text-white">
                              <iconify-icon icon="solar:calendar-date-linear" class="absolute right-5 top-1/2 -translate-y-1/2 text-emerald-400 pointer-events-none" width="20"></iconify-icon>
                         </div>
 
@@ -801,15 +805,15 @@
                 <div>
                     <h4 class="font-bold mb-6 text-slate-900">Social Media</h4>
                     <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full border flex items-center justify-center hover:bg-emerald-500 hover:border-emerald-500 transition-all bg-white border-slate-200 text-emerald-600 hover:text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="facebook" class="lucide lucide-facebook w-5 h-5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        <a href="#" class="w-10 h-10 rounded-full border flex items-center justify-center hover:bg-emerald-500 hover:border-emerald-500 transition-all bg-white border-slate-200 text-emerald-600 hover:text-white" aria-label="Facebook">
+                            <iconify-icon icon="brandico:facebook" width="16"></iconify-icon>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full border flex items-center justify-center hover:bg-emerald-500 hover:border-emerald-500 transition-all bg-white border-slate-200 text-emerald-600 hover:text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="instagram" class="lucide lucide-instagram w-5 h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                        <a href="#" class="w-10 h-10 rounded-full border flex items-center justify-center hover:bg-emerald-500 hover:border-emerald-500 transition-all bg-white border-slate-200 text-emerald-600 hover:text-white" aria-label="Instagram">
+                            <iconify-icon icon="brandico:instagram" width="16"></iconify-icon>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full border flex items-center justify-center hover:bg-emerald-500 hover:border-emerald-500 transition-all bg-white border-slate-200 text-emerald-600 hover:text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="twitter" class="lucide lucide-twitter w-5 h-5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-                        </a>
+			<a href="#" class="w-10 h-10 rounded-full border flex items-center justify-center hover:bg-emerald-500 hover:border-emerald-500 transition-all bg-white border-slate-200 text-emerald-600 hover:text-white" aria-label="Twitter">
+    			    <iconify-icon icon="brandico:twitter-bird" width="16"></iconify-icon>
+			</a>
                     </div>
 <br>
 <div>
